@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ANAGRAMA>>></h1>
+    <textarea id="txtAnagrama"></textarea>
+    <h1>ADIVINA LA PALABRA</h1>
+    <textarea id="txtRespuesta"></textarea>
+    <button onclick="botonClick()">OK</button>
+    <h1 id="esCorrecto" style="color: green"></h1>
+    <h1 id="incorrecto" style="color: red"></h1>
+</body>
+
+<script>
+
+
+    function botonClick(){
+        let anagrama = document.getElementById("txtAnagrama").value;
+        let respuesta = document.getElementById("txtRespuesta").value;
+
+
+        if((anagrams(anagrama,respuesta))){
+            document.getElementById("esCorrecto").innerHTML = "ES CORRECTO";
+            document.getElementById("incorrecto").innerHTML = "";
+        }
+        else
+        {
+            document.getElementById("esCorrecto").innerHTML = "";
+            document.getElementById("incorrecto").innerHTML = "ES INCORRECTO";
+
+        }
+
+
+
+
+    }
+
+
+    function anagrams(stringA, stringB) {
+        return cleanString(stringA) === cleanString(stringB);
+    }
+
+    function cleanString(str) {
+        return str.replace(/[^\w]/g).toLowerCase().split('').sort().join()
+    }   
+
+       
+    
+
+    
+</script>
+</html>
