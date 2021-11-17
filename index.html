@@ -20,24 +20,24 @@
 
 
     function botonClick(){
-        let anagrama = document.getElementById("txtAnagrama").value;
+        // let anagrama = document.getElementById("txtAnagrama").value;
         let respuesta = document.getElementById("txtRespuesta").value;
 
+        // anagrams(anagrama, respuesta)
 
-        if((anagrams(anagrama,respuesta))){
-            document.getElementById("esCorrecto").innerHTML = "ES CORRECTO";
-            document.getElementById("incorrecto").innerHTML = "";
-        }
-        else
-        {
-            document.getElementById("esCorrecto").innerHTML = "";
-            document.getElementById("incorrecto").innerHTML = "ES INCORRECTO";
+        // if((anagrams(anagrama,respuesta))){
+        //     document.getElementById("esCorrecto").innerHTML = "ES CORRECTO";
+        //     document.getElementById("incorrecto").innerHTML = "";
+        // }
+        // else
+        // {
+        //     document.getElementById("esCorrecto").innerHTML = "";
+        //     document.getElementById("incorrecto").innerHTML = "ES INCORRECTO";
 
-        }
+        // }
 
-
-
-
+        document.getElementById("esCorrecto").innerHTML = respuesta.split('').sort(function(){return 0.5-Math.random()}).join('');
+     
     }
 
 
