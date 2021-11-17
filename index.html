@@ -21,7 +21,8 @@
 
     function botonClick(){
         // let anagrama = document.getElementById("txtAnagrama").value;
-        let respuesta = document.getElementById("txtRespuesta").value;
+        
+        let palara = document.getElementById("txtRespuesta").value;
 
         // anagrams(anagrama, respuesta)
 
@@ -36,7 +37,8 @@
 
         // }
 
-        document.getElementById("esCorrecto").innerHTML = respuesta.split('').sort(function(){return 0.5-Math.random()}).join('');
+        let shuffle = palara.split('').sort(function(){return 0.5-Math.random()}).join('');
+        document.getElementById("esCorrecto").innerHTML = shuffle
      
     }
 
